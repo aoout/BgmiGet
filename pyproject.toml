@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "bgmiget"
+version = "0.1.0"
+description = ""
+authors = ["aoout <wuz66280@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+fire = "^0.4.0"
+requests = "^2.28.1"
+beautifulsoup4 = "^4.11.1"
+torrentp = "^0.1.5"
+
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.0"
+
+[tool.poetry.scripts]
+bgmiget = "bgmiget:main"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

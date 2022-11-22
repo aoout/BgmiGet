@@ -1,0 +1,250 @@
+[[package]]
+name = "autopep8"
+version = "2.0.0"
+description = "A tool that automatically formats Python code to conform to the PEP 8 style guide"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pycodestyle = ">=2.9.1"
+tomli = "*"
+
+[[package]]
+name = "beautifulsoup4"
+version = "4.11.1"
+description = "Screen-scraping library"
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.dependencies]
+soupsieve = ">1.2"
+
+[package.extras]
+html5lib = ["html5lib"]
+lxml = ["lxml"]
+
+[[package]]
+name = "certifi"
+version = "2022.9.24"
+description = "Python package for providing Mozilla's CA Bundle."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "charset-normalizer"
+version = "2.1.1"
+description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.extras]
+unicode-backport = ["unicodedata2"]
+
+[[package]]
+name = "fire"
+version = "0.4.0"
+description = "A library for automatically generating command line interfaces."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = "*"
+termcolor = "*"
+
+[[package]]
+name = "idna"
+version = "3.4"
+description = "Internationalized Domain Names in Applications (IDNA)"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
+name = "libtorrent"
+version = "2.0.7"
+description = "Python bindings for libtorrent-rasterbar"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "pycodestyle"
+version = "2.9.1"
+description = "Python style guide checker"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "requests"
+version = "2.28.1"
+description = "Python HTTP for Humans."
+category = "main"
+optional = false
+python-versions = ">=3.7, <4"
+
+[package.dependencies]
+certifi = ">=2017.4.17"
+charset-normalizer = ">=2,<3"
+idna = ">=2.5,<4"
+urllib3 = ">=1.21.1,<1.27"
+
+[package.extras]
+socks = ["PySocks (>=1.5.6,!=1.5.7)"]
+use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
+
+[[package]]
+name = "six"
+version = "1.16.0"
+description = "Python 2 and 3 compatibility utilities"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
+name = "soupsieve"
+version = "2.3.2.post1"
+description = "A modern CSS selector implementation for Beautiful Soup."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "termcolor"
+version = "2.1.1"
+description = "ANSI color formatting for output in terminal"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+tests = ["pytest", "pytest-cov"]
+
+[[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "torrentp"
+version = "0.1.5"
+description = "Download from torrent with magnet link or .torrent file"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+libtorrent = ">=2.0.7"
+
+[[package]]
+name = "urllib3"
+version = "1.26.12"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4"
+
+[package.extras]
+brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)", "brotlipy (>=0.6.0)"]
+secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "pyOpenSSL (>=0.14)", "urllib3-secure-extra"]
+socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.7"
+content-hash = "da01e5d0b020eef727a1c64aa6af298fe7cd4ab741259c02d939d5bf24ebf00f"
+
+[metadata.files]
+autopep8 = [
+    {file = "autopep8-2.0.0-py2.py3-none-any.whl", hash = "sha256:ad924b42c2e27a1ac58e432166cc4588f5b80747de02d0d35b1ecbd3e7d57207"},
+    {file = "autopep8-2.0.0.tar.gz", hash = "sha256:8b1659c7f003e693199f52caffdc06585bb0716900bbc6a7442fd931d658c077"},
+]
+beautifulsoup4 = [
+    {file = "beautifulsoup4-4.11.1-py3-none-any.whl", hash = "sha256:58d5c3d29f5a36ffeb94f02f0d786cd53014cf9b3b3951d42e0080d8a9498d30"},
+    {file = "beautifulsoup4-4.11.1.tar.gz", hash = "sha256:ad9aa55b65ef2808eb405f46cf74df7fcb7044d5cbc26487f96eb2ef2e436693"},
+]
+certifi = [
+    {file = "certifi-2022.9.24-py3-none-any.whl", hash = "sha256:90c1a32f1d68f940488354e36370f6cca89f0f106db09518524c88d6ed83f382"},
+    {file = "certifi-2022.9.24.tar.gz", hash = "sha256:0d9c601124e5a6ba9712dbc60d9c53c21e34f5f641fe83002317394311bdce14"},
+]
+charset-normalizer = [
+    {file = "charset-normalizer-2.1.1.tar.gz", hash = "sha256:5a3d016c7c547f69d6f81fb0db9449ce888b418b5b9952cc5e6e66843e9dd845"},
+    {file = "charset_normalizer-2.1.1-py3-none-any.whl", hash = "sha256:83e9a75d1911279afd89352c68b45348559d1fc0506b054b346651b5e7fee29f"},
+]
+fire = [
+    {file = "fire-0.4.0.tar.gz", hash = "sha256:c5e2b8763699d1142393a46d0e3e790c5eb2f0706082df8f647878842c216a62"},
+]
+idna = [
+    {file = "idna-3.4-py3-none-any.whl", hash = "sha256:90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"},
+    {file = "idna-3.4.tar.gz", hash = "sha256:814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"},
+]
+libtorrent = [
+    {file = "libtorrent-2.0.7-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:7ac05ec01dd89642327c2e03444ad9aca87a7ab8c9e795a2da93a9c930d3c61f"},
+    {file = "libtorrent-2.0.7-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:c7513a1b2478507db46fbacd4d3d54e6666c158b71f989408e0c5e62b5ce1aa6"},
+    {file = "libtorrent-2.0.7-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:5ee696a35d85ae0423a74c66ea018ad540b762d6edfd221d4cb49928e87979d8"},
+    {file = "libtorrent-2.0.7-cp310-cp310-musllinux_1_1_aarch64.whl", hash = "sha256:a67be057b3bac921fb3158db25d1e3ab14c07b6f21a97fff18143f18b5061e6e"},
+    {file = "libtorrent-2.0.7-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:9fd1644fbda3d45d5d9a3d1f9e9ed179d911f92d5b908a80fd34fef689cfe0f5"},
+    {file = "libtorrent-2.0.7-cp310-cp310-win32.whl", hash = "sha256:4291680c3e759c8022dbde24a0d1375b5d08d9f56d2a714abd29248f8ba2966c"},
+    {file = "libtorrent-2.0.7-cp310-cp310-win_amd64.whl", hash = "sha256:604eec9d3296007048a3e7426b5ba1961dace3a69a589351492a8de9dfc5cd60"},
+    {file = "libtorrent-2.0.7-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:5d066257cc5e1841ae9d66df621d66a129b15a2094038f127e5075b0fbd6923b"},
+    {file = "libtorrent-2.0.7-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:c9b7fd5d975434b32ee207588bfb43bac191bf77720a81c8920a3d36aee4fde8"},
+    {file = "libtorrent-2.0.7-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d387ebd4cebdca089f3be26223d7a8deebdfab64f5fd4ff7f2d2c7e03a30a0af"},
+    {file = "libtorrent-2.0.7-cp37-cp37m-musllinux_1_1_aarch64.whl", hash = "sha256:5ff2391f33c1dd1847dd7abf1c96cf076bd9c19e24ddb9313ae6f848bfd87b7d"},
+    {file = "libtorrent-2.0.7-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:20c82f8332aa44c34cbe5daf24a664c515a98902ba8dc57a40ff06cc371dff2d"},
+    {file = "libtorrent-2.0.7-cp37-cp37m-win32.whl", hash = "sha256:b93c89186f0dcb0f785c135949e3e6106be722afcf4b1ed7e065e97da5d5fdd5"},
+    {file = "libtorrent-2.0.7-cp37-cp37m-win_amd64.whl", hash = "sha256:0b997c9f2f363f75cb1deebf0de24397e1b750990c2642c22a948460d9dc17f1"},
+    {file = "libtorrent-2.0.7-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:d61a5775c1e405fef0f6b441308ff9522ba76a145e3f13e98d09dc572d7280a9"},
+    {file = "libtorrent-2.0.7-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:9e1ae3010f8b604d6e5fcabf453b2694026eff506b29dca64ca49a86e8e4a264"},
+    {file = "libtorrent-2.0.7-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:fe72fcac67d0ed28ce326f8b3fa0f153f7ff5b2183d829a960953474515986d4"},
+    {file = "libtorrent-2.0.7-cp38-cp38-musllinux_1_1_aarch64.whl", hash = "sha256:41ac59497c3a8c247e167da0f5e24898e726d12b110eb2cdcbe159e06a342b30"},
+    {file = "libtorrent-2.0.7-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:b5b682e5ee280d2b1c3704d76c35c8f769efcb19995e505818a4927a82c420ef"},
+    {file = "libtorrent-2.0.7-cp38-cp38-win32.whl", hash = "sha256:0315b273ea6e1902c0559ba1350fe1b6beff1695587b699179183d92e9aab50b"},
+    {file = "libtorrent-2.0.7-cp38-cp38-win_amd64.whl", hash = "sha256:d5f3cab75a9870a854c6e86b4b36869dee2abf5c43bc76a109f6019ad120a33c"},
+    {file = "libtorrent-2.0.7-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:1a43ceca91856e7296423fd29c31bd902bca47280425985bd4f04dd89ee5e902"},
+    {file = "libtorrent-2.0.7-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:4c315724d2226ead6852555d2776c905540186a3cd5fe6a504ad4fe9d3209132"},
+    {file = "libtorrent-2.0.7-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a189a1f4bb1f1ab42cf4719f9a3bf115c574209f7603db1a9c12140ce619a439"},
+    {file = "libtorrent-2.0.7-cp39-cp39-musllinux_1_1_aarch64.whl", hash = "sha256:416ff05730735ddd158973c54ba996234992326d5a8528dc72ddf3772e75723f"},
+    {file = "libtorrent-2.0.7-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:0265fa3c215da96036c7aa44e9a89466f3ebb04dbc52e565fe1c5dc8e216d94b"},
+    {file = "libtorrent-2.0.7-cp39-cp39-win32.whl", hash = "sha256:39707d5174ecb3f8f7e69d24109e004e32d836b98857db3e3ebfa7791e3880ca"},
+    {file = "libtorrent-2.0.7-cp39-cp39-win_amd64.whl", hash = "sha256:96e8e7300a378e73e26edbe9974de8512ee951083ab38f50eadee33db9556410"},
+]
+pycodestyle = [
+    {file = "pycodestyle-2.9.1-py2.py3-none-any.whl", hash = "sha256:d1735fc58b418fd7c5f658d28d943854f8a849b01a5d0a1e6f3f3fdd0166804b"},
+    {file = "pycodestyle-2.9.1.tar.gz", hash = "sha256:2c9607871d58c76354b697b42f5d57e1ada7d261c261efac224b664affdc5785"},
+]
+requests = [
+    {file = "requests-2.28.1-py3-none-any.whl", hash = "sha256:8fefa2a1a1365bf5520aac41836fbee479da67864514bdb821f31ce07ce65349"},
+    {file = "requests-2.28.1.tar.gz", hash = "sha256:7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983"},
+]
+six = [
+    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
+    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
+]
+soupsieve = [
+    {file = "soupsieve-2.3.2.post1-py3-none-any.whl", hash = "sha256:3b2503d3c7084a42b1ebd08116e5f81aadfaea95863628c80a3b774a11b7c759"},
+    {file = "soupsieve-2.3.2.post1.tar.gz", hash = "sha256:fc53893b3da2c33de295667a0e19f078c14bf86544af307354de5fcf12a3f30d"},
+]
+termcolor = [
+    {file = "termcolor-2.1.1-py3-none-any.whl", hash = "sha256:fa852e957f97252205e105dd55bbc23b419a70fec0085708fc0515e399f304fd"},
+    {file = "termcolor-2.1.1.tar.gz", hash = "sha256:67cee2009adc6449c650f6bcf3bdeed00c8ba53a8cda5362733c53e0a39fb70b"},
+]
+tomli = [
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
+]
+torrentp = [
+    {file = "torrentp-0.1.5-py3-none-any.whl", hash = "sha256:80841c8818f505a8272a42635c1c73ee13007af9dbbe650edcbdb790ed66c567"},
+    {file = "torrentp-0.1.5.tar.gz", hash = "sha256:8cd03bc1714040ba537710f58fbb3f5806a94b7b34cb648412572fd78c89f6b9"},
+]
+urllib3 = [
+    {file = "urllib3-1.26.12-py2.py3-none-any.whl", hash = "sha256:b930dd878d5a8afb066a637fbb35144fe7901e3b209d1cd4f524bd0e9deee997"},
+    {file = "urllib3-1.26.12.tar.gz", hash = "sha256:3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e"},
+]
