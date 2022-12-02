@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "bgmiget"
-version = "0.1.0"
-description = ""
+version = "0.1.1"
+description = "a way to download anime."
 authors = ["aoout <wuz66280@gmail.com>"]
 readme = "README.md"
 
