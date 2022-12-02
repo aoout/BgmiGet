@@ -1,59 +1,66 @@
-import fire
-from .sources import MiKanProject
-import pickle
 import os
+import pickle
+from dataclasses import asdict, dataclass, field
 
-folder_path = os.path.expanduser('~\\.bgmiget')
-results_path = os.path.expanduser('~\\.bgmiget\\results.pickle')
-old_results_path = os.path.expanduser('~\\.bgmiget\\old_results.pickle')
-if not os.path.exists(folder_path):
-    os.mkdir(folder_path)
+import fire
+from dacite import from_dict
+
+from .sources import MiKanProject
+
+data_path = os.path.expanduser("~//.bgmiget")
+
+
+@dataclass
+class Data:
+    results: list = field(default_factory=list)
+    old_results: list = field(default_factory=list)
+    save_path: str = ""
+
+
+data = Data()
+if os.path.exists(data_path):
+    data = from_dict(data_class=Data, data=pickle.load(open(data_path, "rb")))
 
 
 class BgmiGet:
     def __init__(self, source):
         self.source = source()
 
-    def read_data(self):
-        self.source.results = pickle.load(open(results_path, "rb"))
-
-    def write_data(self):
-        if os.path.exists(old_results_path):
-            os.remove(old_results_path)
-        if os.path.exists(results_path):
-            os.rename(results_path, old_results_path)
-
-        pickle.dump(self.source.results, open(results_path, "wb"))
-
-    def read_old_data(self):
-        self.source.results = pickle.load(
-            open(old_results_path, "rb"))
+    def write_results(self):
+        data.old_results = data.results
+        data.results = self.source.results
+        pickle.dump(asdict(data), open(data_path, "wb"))
 
     def search(self, query):
         self.source.search(query)
-        self.write_data()
+        self.write_results()
+
+    def set_save_path(self, path):
+        data.save_path = path
+        pickle.dump(asdict(data), open(data_path, "wb"))
 
     def download(self, index):
-        self.read_data()
-        self.source.download(index)
+        self.source.results = data.results
+        self.source.download(index, data.save_path)
 
     def include(self, keyword):
-        self.read_data()
+        self.source.results = data.results
         self.source.results = [(text, url)
                                for text, url in self.source.results if keyword in text]
         self.source.show_results()
-        self.write_data()
+        self.write_results()
 
     def exclude(self, keyword):
-        self.read_data()
+        self.source.results = data.results
         self.source.results = [(text, url)
                                for text, url in self.source.results if keyword not in text]
         self.source.show_results()
-        self.write_data()
+        self.write_results()
 
     def undo(self):
-        self.read_old_data()
+        self.source.results = data.old_results
         self.source.show_results()
+        self.write_results()
 
 
 def main():
@@ -61,6 +68,7 @@ def main():
     bgmiget = BgmiGet(source=MiKanProject)
     fire.Fire({
         "search": bgmiget.search,
+        "set_save_path": bgmiget.set_save_path,
         "download": bgmiget.download,
         "include": bgmiget.include,
         "exclude": bgmiget.exclude,

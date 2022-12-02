@@ -10,7 +10,7 @@ class MiKanProject:
         self.results = None
 
     def search(self, query):
-        URL = "https://mikanani.me/Home/Search?searchstr=" + query
+        URL = BASE_URL + "Home/Search?searchstr=" + query
         page = requests.get(URL)
         soup = BeautifulSoup(page.content, "html.parser")
 
@@ -18,10 +18,10 @@ class MiKanProject:
             "a", class_="js-magnet magnet-link")["data-clipboard-text"]) for i in soup.find_all("tr", class_="js-search-results-row")]
         self.show_results()
 
-    def download(self, index):
+    def download(self, index, path):
 
         url = self.results[index][1]
-        torrent_file = TorrentDownloader(url, ".")
+        torrent_file = TorrentDownloader(url, path)
         torrent_file.start_download()
 
     def show_results(self):

@@ -45,6 +45,17 @@ python-versions = ">=3.6.0"
 unicode-backport = ["unicodedata2"]
 
 [[package]]
+name = "dacite"
+version = "1.6.0"
+description = "Simple creation of data classes from dictionaries."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+dev = ["black", "coveralls", "mypy", "pylint", "pytest (>=5)", "pytest-cov"]
+
+[[package]]
 name = "fire"
 version = "0.4.0"
 description = "A library for automatically generating command line interfaces."
@@ -160,7 +171,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "da01e5d0b020eef727a1c64aa6af298fe7cd4ab741259c02d939d5bf24ebf00f"
+content-hash = "ad80771b7f1a8febd08b8f657383b48c360e50e5f529a697bd11c3dbee91ab6a"
 
 [metadata.files]
 autopep8 = [
@@ -178,6 +189,10 @@ certifi = [
 charset-normalizer = [
     {file = "charset-normalizer-2.1.1.tar.gz", hash = "sha256:5a3d016c7c547f69d6f81fb0db9449ce888b418b5b9952cc5e6e66843e9dd845"},
     {file = "charset_normalizer-2.1.1-py3-none-any.whl", hash = "sha256:83e9a75d1911279afd89352c68b45348559d1fc0506b054b346651b5e7fee29f"},
+]
+dacite = [
+    {file = "dacite-1.6.0-py3-none-any.whl", hash = "sha256:4331535f7aabb505c732fa4c3c094313fc0a1d5ea19907bf4726a7819a68b93f"},
+    {file = "dacite-1.6.0.tar.gz", hash = "sha256:d48125ed0a0352d3de9f493bf980038088f45f3f9d7498f090b50a847daaa6df"},
 ]
 fire = [
     {file = "fire-0.4.0.tar.gz", hash = "sha256:c5e2b8763699d1142393a46d0e3e790c5eb2f0706082df8f647878842c216a62"},
