@@ -39,9 +39,9 @@ class BgmiGet:
         data.save_path = path
         pickle.dump(asdict(data), open(data_path, "wb"))
 
-    def download(self, index):
+    def download(self, index="all"):
         self.source.results = data.results
-        self.source.download(index, data.save_path)
+        self.source.download(data.save_path,index)
 
     def include(self, keyword):
         self.source.results = data.results
