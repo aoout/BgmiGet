@@ -1,5 +1,3 @@
-import re
-
 import requests
 from bs4 import BeautifulSoup
 from torrentp import TorrentDownloader
@@ -31,13 +29,4 @@ class MiKanProject:
 
     def show_results(self):
         for i, result in enumerate(self.results):
-            print(str(i)+" -> "+self.more_useful_name(result[0]))
-
-    def more_useful_name(self, name):
-        # todo: 添加更多的正则规则
-        # name = re.sub("\d{1,2}月新番", "", name)
-        # name = re.sub("（急招翻译、校对）", "", name)
-        # if simple_des:
-        #   name = re.sub("[WEBrip]", "", name)
-        # 这些规则不应该内置，而是有一个命令用于添加，而有一些默认的规则被写进了一个配置文件里,或者也可以是空的
-        return name
+            print(str(i)+" -> "+result[0])

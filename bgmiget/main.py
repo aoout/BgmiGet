@@ -41,7 +41,7 @@ class BgmiGet:
 
     def download(self, index="all"):
         self.source.results = data.results
-        self.source.download(data.save_path,index)
+        self.source.download(data.save_path, index)
 
     def include(self, keyword):
         self.source.results = data.results
