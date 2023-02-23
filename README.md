@@ -1,7 +1,5 @@
 # BgmiGet
 
----
-
 ## How to Install
 
 ```
@@ -9,8 +7,6 @@ pip install bgmiget
 ```
 
 ## Basic Usage
-
----
 
 Search anime by search "commnad".
 
