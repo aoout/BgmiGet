@@ -23,12 +23,7 @@ Then, download anime by index.
 bgmiget download 0
 ```
 
-Filter the searching results by command "include" and "exclude".
+## TODO
 
-```
-bgmiget include "蓝天字幕组"
-```
-
-```
-bgmiget exclude "繁体"
-```
+1. 补全type hint。
+2. 写一些注释。
