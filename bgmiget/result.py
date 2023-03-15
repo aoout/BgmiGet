@@ -2,6 +2,9 @@ import re
 import logging
 
 class Result:
+    '''
+    Parse metadata to better display search results.
+    '''
     def __init__(self, title: str) -> None:
         self.title = title
         self.parse()
@@ -33,12 +36,9 @@ class Result:
         suffixString = "".join([f"(?:{i})?" for i in suffix])
 
         patternString = f"(?<![\dA-Za-z\u4e00-\u9fa5]){prefixString}(\d+){suffixString}(?![\dA-Za-z\u4e00-\u9fa5])"
-        pattern = re.compile(patternString)
         try:
-            _ = pattern.findall(self.title)[0]
-            if _.isdigit():
-                return str(int(_))
-            return _
+            _ = re.findall(patternString,self.title)[0]
+            return str(int(_)) if _.isdigit() else _
         except:
             logging.warning(f"{self.title}")
-            logging.warning(f"{pattern.findall(self.title)}")
+            logging.warning(f"{re.findall(patternString,self.title)}")

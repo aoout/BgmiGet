@@ -7,11 +7,16 @@ from .sources import MiKanProject
 
 
 class BgmiGet:
+    '''
+    Used to build the main command-line program.
+    '''
     def __init__(self, source):
         self.source = source()
 
     def search(self, query: str, episode: str = None, subtitleType: str = None, subtitleGroup: str = None):
-
+        '''
+        Search anime through various meta information.
+        '''
         episode = str(episode)
 
         self.source.search(query)
@@ -25,6 +30,9 @@ class BgmiGet:
         self.source.show_results()
 
     def download(self, index="all"):
+        '''
+        Download file by index.
+        '''
         with candle(Data, data_path) as data:
             self.source.results = data.results
         self.source.download(".", index)

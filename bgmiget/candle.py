@@ -8,6 +8,9 @@ from dacite import from_dict
 
 @contextmanager
 def candle(dataClass:Type,dataPath:str):
+    '''
+    Store data more safely with context managers.
+    '''
     data = dataClass()
     data = from_dict(data_class=dataClass,data=pickle.load(open(dataPath,"rb")))
     yield data
