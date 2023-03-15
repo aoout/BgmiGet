@@ -112,13 +112,13 @@ class Result:
         Parse subtitle language from title.
         '''
         if "繁" not in self.title and "简" not in self.title:
-            self.subtitleType = "Simplified Chinese*"
+            self.subtitleType = "sc"
         elif "简" in self.title:
-            self.subtitleType = "Simplified Chinese*"
+            self.subtitleType = "sc"
         else:
-            self.subtitleType = "traditional Chinese*"
+            self.subtitleType = "tc"
 
-    def parse_episode(episode_title: str) -> int:
+    def parse_episode(self,episode_title: str) -> int:
 
         spare = None
 
@@ -148,7 +148,7 @@ class Result:
                 e = chinese_to_arabic(_[0])
                 return e
             except Exception:
-
+                pass
         _ = FETCH_EPISODE_WITH_VERSION.findall(episode_title)
         if _ and _[0].isdigit():
             return int(_[0])

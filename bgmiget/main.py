@@ -6,6 +6,7 @@ import fire
 from dacite import from_dict
 
 from .sources import MiKanProject
+from .result import Result
 
 data_path = os.path.expanduser("~//.bgmiget")
 
@@ -31,9 +32,24 @@ class BgmiGet:
         data.results = self.source.results
         pickle.dump(asdict(data), open(data_path, "wb"))
 
-    def search(self, query):
+    def search(self, query:str,episode:int=None,subtitleType:str=None):
         self.source.search(query)
+        
+        if episode or subtitleType:
+            results = self.source.results.copy()
+            for r in self.source.results:
+                R = Result(r[0])
+                if episode:
+                    if R.episode != episode:
+                        results.remove(r)
+                        continue
+                if subtitleType:
+                    if R.subtitleType != subtitleType:
+                        results.remove(r)
+
+        self.source.results = results
         self.write_results()
+        self.source.show_results()
 
     def set_save_path(self, path):
         data.save_path = path

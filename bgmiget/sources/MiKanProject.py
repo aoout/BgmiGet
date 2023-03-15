@@ -16,7 +16,6 @@ class MiKanProject:
 
         self.results = [(i.find("a", class_="magnet-link-wrap").text, i.find(
             "a", class_="js-magnet magnet-link")["data-clipboard-text"]) for i in soup.find_all("tr", class_="js-search-results-row")]
-        self.show_results()
 
     def download(self, path, index):
         if index != "all":
@@ -30,3 +29,4 @@ class MiKanProject:
     def show_results(self):
         for i, result in enumerate(self.results):
             print(str(i)+" -> "+result[0])
+
