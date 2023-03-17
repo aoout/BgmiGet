@@ -1,10 +1,12 @@
+import os
+
 import fire
 
-from .candle import candle
-from .data import Data, data_path
+from .persistentdict import PersistentDict
 from .result import Result
 from .sources import MiKanProject
 
+data = PersistentDict(os.path.expanduser("~//.bgmiget"))
 
 class BgmiGet:
     '''
@@ -25,16 +27,15 @@ class BgmiGet:
                        and (not subtitleType or Result(r[0]).subtitleType == subtitleType)
                        and (not subtitleGroup or subtitleGroup in Result(r[0]).title)]
             self.source.results = results
-        with candle(Data, data_path) as data:
-            data.results = self.source.results
+        data["results"] = self.source.results
+        data.save()
         self.source.show_results()
 
     def download(self, index="all"):
         '''
         Download file by index.
         '''
-        with candle(Data, data_path) as data:
-            self.source.results = data.results
+        self.source.results = data["results"]
         self.source.download(".", index)
 
 
