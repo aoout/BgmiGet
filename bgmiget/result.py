@@ -35,10 +35,10 @@ class Result:
         prefixString = "".join([f"(?:{i})?" for i in prefix])
         suffixString = "".join([f"(?:{i})?" for i in suffix])
 
-        patternString = f"(?<![\dA-Za-z\u4e00-\u9fa5]){prefixString}(\d+){suffixString}(?![\dA-Za-z\u4e00-\u9fa5])"
-        try:
-            _ = re.findall(patternString,self.title)[0]
-            return str(int(_)) if _.isdigit() else _
-        except:
+        pattern = re.compile(f"(?<![\dA-Za-z\u4e00-\u9fa5]){prefixString}(\d+){suffixString}(?![\dA-Za-z\u4e00-\u9fa5])")
+        match = pattern.search(self.title)
+        if match:
+            return str(int(match.group(1))) if match.group(1).isdigit() else match.group(1)
+        else:
             logging.warning(f"{self.title}")
-            logging.warning(f"{re.findall(patternString,self.title)}")
+            logging.warning(f"{match}")
