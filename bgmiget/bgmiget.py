@@ -12,10 +12,10 @@ class BgmiGet:
     '''
     Used to build the main command-line program.
     '''
-    def __init__(self, source):
+    def __init__(self, source)->None:
         self.source = source()
 
-    def search(self, query: str, episode: str = None, subtitleType: str = None, subtitleGroup: str = None):
+    def search(self, query: str, episode: str = None, subtitleType: str = None, subtitleGroup: str = None)->None:
         '''
         Search anime through various meta information.
         '''
@@ -31,7 +31,7 @@ class BgmiGet:
         data.save()
         self.source.show_results()
 
-    def download(self, index="all"):
+    def download(self, index="all")->None:
         '''
         Download file by index.
         '''
