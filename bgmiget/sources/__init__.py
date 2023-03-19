@@ -1,1 +1,1 @@
-from .MiKanProject import MiKanProject
+from .mikanproject import MiKanProject

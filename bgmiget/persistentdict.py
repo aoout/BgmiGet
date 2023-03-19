@@ -10,6 +10,8 @@ class PersistentDict(UserDict):
             with open(filename, "rb") as f:
                 data = pickle.load(f)
                 super().__init__(data)
+        else:
+            super().__init__()
 
     def save(self):
         with open(self.filename, "wb") as f:
