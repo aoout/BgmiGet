@@ -91,8 +91,9 @@ class BgmiGet:
                     available_max_episode = int(r.episode)
             if available_max_episode > max_episode:
                 print(f"{anime} : {max_episode} -> {available_max_episode}") 
+        return 1
 
-    def show_subscribed(self) -> None:
+    def show_subscribed(self) -> int:
         '''
         Show all subscribed anime and their max_episode.
         '''
@@ -104,6 +105,7 @@ class BgmiGet:
         for anime in subscribed_animes:
             max_episode = data["subscribed_animes"][anime]["max_episode"]
             print(f"{anime} -> {max_episode}")
+        return 1
 
 
 
