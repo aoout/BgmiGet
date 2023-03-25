@@ -54,7 +54,7 @@ class BgmiGet:
             logging.debug("No results found.")
         else:
             anime = anime[0]
-            data["subscribed_animes"][anime]["max_episode"] = max(data["subscribed_animes"][anime]["max_episode"],result.episode)
+            data["subscribed_animes"][anime]["max_episode"] = max(data["subscribed_animes"][anime]["max_episode"],int(result.episode))
 
     def subscribe(self, query: str) -> int:
         '''
