@@ -33,7 +33,13 @@ class BgmiGet:
         hashString = "|".join([query, episode, subtitleType, subtitleGroup])
         searchHash = hashlib.sha256(hashString.encode('utf-8')).hexdigest()
 
-        if searchHash in data and data[searchHash]["timestamp"] + 300 > timestamp:
+        for key in list(data.keys()):
+            if isinstance(data[key], dict) and "timestamp" in data[key]:
+                    if timestamp - data[key]["timestamp"] > 300:
+                        del data[key]
+
+
+        if searchHash in data:
             logging.info(
                 f"Found {query} in cache. Timestamp: {data[searchHash]['timestamp']}")
             results = data[searchHash]["results"]
