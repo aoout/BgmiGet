@@ -2,7 +2,6 @@ import hashlib
 import logging
 import os
 import time
-from typing import Optional
 
 import fire
 from torrentp import TorrentDownloader
@@ -11,7 +10,7 @@ from .persistentdict import PersistentDict
 from .sources import MiKanProject
 
 data = PersistentDict(os.path.expanduser("~//.bgmiget"))
-logging.basicConfig(filename='bgmiget.log', level=logging.DEBUG)
+logging.basicConfig(handlers=[logging.FileHandler('bgmiget.log','w','utf-8')], level=logging.DEBUG)
 
 
 class BgmiGet:
@@ -40,8 +39,7 @@ class BgmiGet:
 
 
         if searchHash in data:
-            logging.info(
-                f"Found {query} in cache. Timestamp: {data[searchHash]['timestamp']}")
+            logging.info(f"Found {query} in cache. Timestamp: {data[searchHash]['timestamp']}")
             results = data[searchHash]["results"]
         else:
             results = self.source.search(query)
@@ -50,8 +48,7 @@ class BgmiGet:
                            and (not subtitleType or r.subtitleType == subtitleType)
                            and (not subtitleGroup or subtitleGroup in r.title)]
             data[searchHash] = {"results": results, "timestamp": timestamp}
-            logging.info(
-                f"Saved {query} to cache. Timestamp: {data[searchHash]['timestamp']}")
+            logging.info(f"Saved {query} to cache. Timestamp: {data[searchHash]['timestamp']}")
 
         data["results"] = results
         data.save()

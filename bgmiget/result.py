@@ -2,7 +2,7 @@ import re
 import logging
 from functools import cached_property
 
-logging.basicConfig(filename='bgmiget.log', level=logging.DEBUG)
+logging.basicConfig(handlers=[logging.FileHandler('bgmiget.log','w','utf-8')], level=logging.DEBUG)
 
 class Result:
     '''
