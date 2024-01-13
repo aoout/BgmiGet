@@ -23,7 +23,7 @@ class BgmiGet:
     def __init__(self, source) -> None:
         self.source = source()
 
-    def search(self, query: str, episode: str = "", subtitleType: str = "", subtitleGroup: str = "") -> None:
+    def search(self, query: str, episode: str = "", subtitleType: str = "", subtitleGroup: str = "",limit: int = 100) -> None:
         '''
         Search anime through various meta information.
         '''
@@ -55,6 +55,8 @@ class BgmiGet:
 
         data["results"] = results
         data.save()
+        if(len(results)>limit):
+            results = results[0:limit]
         for i, r in enumerate(results):
             print(f"{i:<4} -> {r.title}")
 
