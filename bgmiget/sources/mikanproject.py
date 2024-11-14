@@ -1,3 +1,4 @@
+import os
 from typing import List
 
 import requests
@@ -13,7 +14,11 @@ class MiKanProject:
     def search(self, query: str) -> List[Result]:
 
         URL = BASE_URL + "Home/Search?searchstr=" + query
-        page = requests.get(URL)
+
+        page = requests.get(URL, proxies={
+            'http': os.getenv("HTTP_PROXY"),
+            'https': os.getenv("HTTPS_PROXY"),
+        })
         soup = BeautifulSoup(page.content, "html.parser")
 
         results = []
