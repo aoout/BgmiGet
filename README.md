@@ -7,7 +7,7 @@ BgmiGet is a command line tool that allows you to search, download, and manage y
 ## 📦 Dependencies
 
 > [!NOTE]
-> PyPdf requires Python 3.8.1.
+> PyPdf requires Python 3.8 or higher.
 
 ## 💻 Installation
 
